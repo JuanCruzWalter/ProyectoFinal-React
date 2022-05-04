@@ -1,0 +1,8 @@
+{
+    "Productos":[
+        {"id":"01", "name":"remera", "description":"azul - algodon - nike","stock":"10","precio":"1000"},
+        {"id":"02", "name":"chomba", "description":"roja - pique - polo","stock":"10","precio":"2000"},
+        {"id":"03", "name":"camisa", "description":"blanca - lino - xyz","stock":"10","precio":"1500"},
+        {"id":"04", "name":"pantalon", "description":"negro - algodon - nike","stock":"10","precio":"1700"}
+    ]
+}

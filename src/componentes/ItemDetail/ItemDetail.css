@@ -1,0 +1,14 @@
+.ItemDetail{
+    padding: 2rem;
+    margin: 2rem;
+    justify-content: center;
+    display: block;
+    width: 20rem;
+    height: 24rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(24, 24, 24);
+}
+.ItemDetail_img{
+    width: 10rem;
+    height: auto;
+}
