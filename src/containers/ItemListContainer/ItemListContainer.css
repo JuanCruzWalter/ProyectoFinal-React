@@ -1,4 +1,9 @@
 .saludo, .cargando{
     color:aliceblue
 }
+.contenedorCards{
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
 

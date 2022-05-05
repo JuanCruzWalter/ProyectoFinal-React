@@ -1,11 +1,12 @@
 .navBar{
     background-color: rgb(246, 247, 249);
-    height: 3.5rem;
+    min-height: 3.5rem;
 
 }
 .navBar h1{
     display: inline;
     padding: .3rem 10rem .3rem 1rem ;
+    
     
     
 }
@@ -27,7 +28,7 @@
 }
 
 .btn_menu2:hover{
-
+    
     background-color: rgb(208, 206, 206);
     color: rgb(0, 0, 0);
     transition: 2s;
@@ -39,4 +40,14 @@
     color: rgb(251, 251, 249);
     border: 1px solid rgba(0, 0, 0, 0.203);
     
+}
+
+@media (max-width: 1200px) {
+ .btn_menu2{
+     display: block;
+ }
+ .navBar h1{
+    display: inline;
+    padding: .3rem .3rem .3rem .3rem ;   
+}
 }

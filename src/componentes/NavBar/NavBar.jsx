@@ -6,14 +6,14 @@ import {Link , NavLink } from "react-router-dom"
 function NavBar() {
   return (
     <div className='navBar'>
-        <NavLink to="/">
+        <NavLink  className='nombreTienda'  to="/">
           <h1>RKT Indumentaria</h1>
         </NavLink>
 
         <NavLink className='btn_menu btn_menu2' to="/categorias/remeras">Remeras</NavLink>
         <NavLink className='btn_menu btn_menu2' to="/categorias/camisas">Camisas</NavLink>
         <NavLink  className='btn_menu btn_menu2' to="/categorias/camperas">Camperas</NavLink>
-        <NavLink className='btn_menu btn_menu2' to="/categorias/Ofertas">Ofertas</NavLink>
+        <NavLink className='btn_menu btn_menu2' to="/categorias/pantalones">Pantalones</NavLink>
         
         <NavLink to="/cart">
         <input type="text" name="" id="" className='btn_menu btn_menu-input' placeholder='buscar' />
