@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 
 import ItemList from '../../componentes/ItemList/ItemList'
 import { useParams } from "react-router-dom"
-import { collection, getDocs, getFirestore } from "firebase/firestore"
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 
 function ItemListContainer({saludo}) {
@@ -14,15 +14,41 @@ function ItemListContainer({saludo}) {
     // hook de react router dom
     const { categoriaId         } = useParams()
 
-     useEffect(()=>{
+    //  useEffect(()=>{
+    //         const querydb = getFirestore()
+    //         const queryCollection = collection(querydb, 'productos')
+    //         getDocs(queryCollection)
+    //         .then(resp => {setProductos(resp.docs.map(item => ({ id:item.id, ...item.data()})))
+    //     setLoading(false)})
+    //  },[])
+
+
+    const [valor,SetValor] = useState()
+    
+    useEffect(()=>{
+        SetValor(categoriaId)
+        if (categoriaId==null) {
+            todaColeccion()
+        }else{
+            filtrado()
+        }
+        function todaColeccion(){
+            const querydb = getFirestore()
+             const queryCollection = collection(querydb, 'productos')
+             getDocs(queryCollection)
+             .then(resp => {setProductos(resp.docs.map(item => ({ id:item.id, ...item.data()})))
+         setLoading(false)})
+        }
+        function filtrado(){
             const querydb = getFirestore()
             const queryCollection = collection(querydb, 'productos')
-            getDocs(queryCollection)
+            const queryFilter = query(queryCollection, where('name','==',categoriaId))
+            getDocs(queryFilter)
             .then(resp => {setProductos(resp.docs.map(item => ({ id:item.id, ...item.data()})))
-        setLoading(false)})
-     },[])
-
-     
+           setLoading(false)})
+        }
+        
+    },[categoriaId]) 
     
 
 

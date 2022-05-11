@@ -14,6 +14,17 @@ function CartContextProvider({children}) { //componente
             ...cartList,
             item
         ])
+        /* for (let i = 0; i < cartList.length; i++) {
+          if (cartList[i].name == item.name) {
+            cartList[i].count =  cartList[i].count + item.count
+
+          }else {
+            setCartList([
+                ...cartList,
+                item
+            ])
+          }           
+        } */   
     }
 
     const removeCart = () => {

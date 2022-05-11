@@ -17,6 +17,9 @@ function RoutesApp() {
                 <Route path="/"
                 element={<ItemListContainer saludo="Bienvenido a la tienda RKT"/>}
                 />
+                 <Route path="/categorias/:categoriaId"
+                element={<ItemListContainer saludo="Bienvenido a la tienda RKT"/>}
+                />
                 <Route path="/count"
                 element={<ItemCount/>}
                 />

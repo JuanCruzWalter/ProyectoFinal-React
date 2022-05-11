@@ -10,13 +10,12 @@ function NavBar() {
           <h1>RKT Indumentaria</h1>
         </NavLink>
 
-        <NavLink className='btn_menu btn_menu2' to="/categorias/remeras">Remeras</NavLink>
-        <NavLink className='btn_menu btn_menu2' to="/categorias/camisas">Camisas</NavLink>
-        <NavLink  className='btn_menu btn_menu2' to="/categorias/camperas">Camperas</NavLink>
-        <NavLink className='btn_menu btn_menu2' to="/categorias/pantalones">Pantalones</NavLink>
-        
-        <NavLink to="/cart">
+        <NavLink className='btn_menu btn_menu2' to="/categorias/remera">Remeras</NavLink>
+        <NavLink className='btn_menu btn_menu2' to="/categorias/camisa">Camisas</NavLink>
+        <NavLink  className='btn_menu btn_menu2' to="/categorias/campera">Camperas</NavLink>
+        <NavLink className='btn_menu btn_menu2' to="/categorias/pantalon">Pantalones</NavLink>
         <input type="text" name="" id="" className='btn_menu btn_menu-input' placeholder='buscar' />
+        <NavLink to="/cart">
         <a href="#" className='btn_menu'><CartWidjet/></a>
         </NavLink>
         
