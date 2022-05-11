@@ -1,4 +1,20 @@
 .cart{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color:aliceblue
+}
+.cart_contenedor{
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+}
+.inputCart{
+    padding: .5rem;
+    width: 20rem;
+}
+.btn-outline-warning:hover{
+    background-color: rgb(209, 209, 209);
+    transition: 200ms;
 }

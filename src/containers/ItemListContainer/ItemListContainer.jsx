@@ -10,19 +10,7 @@ function ItemListContainer({saludo}) {
 
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
-
-    // hook de react router dom
     const { categoriaId         } = useParams()
-
-    //  useEffect(()=>{
-    //         const querydb = getFirestore()
-    //         const queryCollection = collection(querydb, 'productos')
-    //         getDocs(queryCollection)
-    //         .then(resp => {setProductos(resp.docs.map(item => ({ id:item.id, ...item.data()})))
-    //     setLoading(false)})
-    //  },[])
-
-
     const [valor,SetValor] = useState()
     
     useEffect(()=>{

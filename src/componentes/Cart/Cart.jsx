@@ -11,28 +11,32 @@ function Cart() {
   const [listado, setListado] = useState()
   const [vacio, setVacio] = useState(false)
   const [comprobante, setComprobante] = useState(false)
-
+  
 
   function confirmarCompra(e) {
-      setComprobante(true)
-      e.preventDefault();
+      
+    setComprobante(true)
+    e.preventDefault();
   
-      let orden={}
+    let orden={}
   
-      orden.comprador = {nombre:"xx",email:"x@gmail.com",telefono:"000332332"}
-      orden.items = cartList.map(cartItem =>{
+    orden.comprador = {nombre:"cliente1",email:"cliente1@gmail.com",telefono:"000-332-332"}
+    orden.items = cartList.map(cartItem =>{
         
-        const nombre = cartItem.name
-        const cantidad = cartItem.count 
-        setListado(orden)
-        console.log(orden)
-        return {nombre, cantidad}
+    const nombre = cartItem.name
+    const cantidad = cartItem.count 
+    setListado(orden)
+    console.log(orden)
+    return {nombre, cantidad}
        
-      })
+    })
   
-      const db = getFirestore()
-      const queryCollection = collection(db, 'pedidos')
-      addDoc(queryCollection, orden)
+    const db = getFirestore()
+    const queryCollection = collection(db, 'pedidos')
+    addDoc(queryCollection, orden)
+          
+        
+      
    
   }
   useEffect(()=>{
@@ -50,22 +54,24 @@ function Cart() {
   
   return (
     
-    <div>
+    <div className="cart_contenedor">
       {
         vacio ? (
         <div className="cart">      
-              {cartList.map(prod => <li key={prod.id} style={{"margin-top" : "1rem"}}> agregaste: {prod.name} - cantidad: {prod.count} - el subtotal es: {prod.count*prod.precio} </li>)}
+              {cartList.map(prod => <li key={prod.id} style={{"margin-top" : "1rem"}}> agregaste el producto: {prod.name} -- cantidad: {prod.count} -- el precio por unidad es: $ {prod.precio} -- el subtotal es: $ {prod.count*prod.precio} </li>)}
               <button className="btn btn-outline-warning" style={{"margin" : "1rem","padding" : ".3rem 1rem "}} onClick={removeCart}>Vaciar Carrito</button>
               <Link to="/">
               <button className="btn btn-outline-warning" style={{"margin" : "1rem","padding" : ".3rem 1rem "}}>seguir comprando</button>
               </Link>
-              <button onClick={confirmarCompra} className="btn btn-outline-warning" style={{"margin" : "1rem","padding" : ".3rem 1rem "}}>confirmar compra</button>
+              <button onClick={confirmarCompra} className="btn btn-outline-warning" style={{"margin" : "1rem","padding" : ".3rem 1rem "}}>confirmar compra</button><br />
+              
+              
         </div>) 
      :
           (<div className="cart">
-            El carrito esta vacio
+            <h4>El carrito esta vacio</h4><br />
             <Link to="/">
-              <button className="btn btn-outline-warning" style={{"margin" : "1rem","padding" : ".3rem 1rem "}}>seguir comprando</button>
+              <button className="btn btn-outline-warning" style={{"margin" : "1rem","padding" : ".3rem 1rem "}}>volver al inicio</button>
             </Link>
           </div>)
       }
